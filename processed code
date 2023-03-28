@@ -33,13 +33,13 @@ TCGAbiolinks:::getProjectSummary("TCGA-PRAD")
  
 
 query_TCGA <- GDCquery(
-  project = "TCGA-LUSC",
+  project = "TCGA-PRAD",
   data.category = "Transcriptome Profiling",
   data.type = "Gene Expression Quantification",
   experimental.strategy = "RNA-Seq",
   barcode = c("TCGA-*")) # parameter enforced by GDCquery
   
-# https://portal.gdc.cancer.gov/projects/TCGA-LUSC
+# https://portal.gdc.cancer.gov/projects/TCGA-PRAD
 
 GDCdownload(query = query_TCGA, method = "api", files.per.chunk = 100)
 tcga_data <- GDCprepare(query_TCGA,summarizedExperiment = TRUE)
